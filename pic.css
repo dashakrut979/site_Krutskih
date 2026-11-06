@@ -1,0 +1,252 @@
+.css-picture {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #b0c190;
+}
+
+.chair-left,
+.chair-right {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 160px;
+    z-index: 1;
+}
+
+.chair-left { left: 0; }
+.chair-right { right: 0; transform: scaleX(-1); }
+
+.chair-back {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 70%;
+    height: 100px;
+    border-right: 8px solid #d87834;
+    border-bottom: 2px solid #d87834;
+    border-top: 2px solid #d87834;
+    border-left: none;
+    border-top-right-radius: 100% 70%;
+    border-bottom-right-radius: 100% 70%;
+}
+
+.chair-seat {
+    position: absolute;
+    bottom: 40px;
+    left: 17px;
+    width: 33px;
+    height: 8px;
+    background-color: #d87834;
+}
+
+.chair-leg {
+    position: absolute;
+    bottom: 0;
+    left: 37px;
+    width: 8px;
+    height: 45px;
+    background-color: #d87834;
+}
+
+.chair-dots {
+    position: absolute;
+    bottom: 41px;
+    left: 19px;
+    display: flex;
+    gap: 4px;
+}
+
+.chair-dots span {
+    width: 6.5px;
+    height: 5.4px;
+    background-color: #854109;
+    border-radius: 50%;
+}
+
+.table-leg {
+    position: absolute;
+    bottom: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 50px;
+    background-color: #d87834;
+    border-radius: 50% 50% 50% 50% / 100% 100% 100% 100%;
+    z-index: 11;
+}
+
+.table-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 25px;
+    background-color: #d87834;
+    clip-path: polygon(35% 0, 65% 0, 100% 100%, 0 100%);
+    z-index: 11;
+}
+
+.picture-frame {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    z-index: 10;
+}
+
+.picture-frame::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background-image: radial-gradient(circle at 50% 60%, transparent 50%, white 50%, white 65%, transparent 65%);
+    background-size: 20% 24px;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    z-index: -1;
+}
+.picture-frame::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -12px;
+    right: -12px;
+    background-image:
+        radial-gradient(circle at 60% 50%, transparent 50%, white 50%, white 65%, transparent 65%),
+        radial-gradient(circle at 40% 50%, transparent 50%, white 50%, white 65%, transparent 65%);
+    background-size: 
+        24px 20%,
+        24px 20%;
+    background-position: 
+        0 100%,
+        100% 0;
+    background-repeat: 
+        repeat-y,
+        repeat-y;
+    z-index: -1;
+}
+
+.picture-inner {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: radial-gradient(circle at 65% 40%, #f9fbfc, #3468f6);
+}
+
+.sun {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 50% 50%, 
+        #f5ef8b 0%,
+        #f5ef8b 60%,
+        #f5e33a 60%,
+        #f5e33a 100%);
+    border-radius: 50%;
+}
+
+.pic-table {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background-color: #d87834;
+    z-index: 1;
+}
+
+.teapot {
+    position: absolute;
+    bottom: 15px;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 55px;
+}
+
+.teapot-body {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 93%;
+    height: 93%;
+    background: radial-gradient(circle at 30% 30%, #f9e8ec, #e9a6b1, #ec647d, #e93156, #df2952);
+    border-radius: 50% 50% 50% 50%;
+    z-index: 3;
+}
+
+.teapot-lid {
+    position: absolute;
+    top: -3px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 25px;
+    background: radial-gradient(circle at 30% 30%, #f9e8ec, #ec647d, #e93156, #df2952);
+    border-radius: 60% 60% 60% 60%;
+    z-index: 2;
+}
+
+.teapot-knob {
+    position: absolute;
+    top: -8px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #df2952;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.teapot-spout {
+    position: absolute;
+    bottom: 30px;
+    left: -15px;
+    width: 20px;
+    height: 7px;
+    background-color: #d92542;
+    clip-path: polygon(
+        15% 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 100%
+    );
+    transform: rotate(25deg);
+    z-index: 1;
+}
+
+.teapot-handle {
+    position: absolute;
+    bottom: 16px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #d92542;
+    border-radius: 100% 100% 100% 100%;
+    z-index: 1;
+}

@@ -1,0 +1,169 @@
+.roll-scene {
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roll {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to top, #69e1ea 0%, #ffffff 100%);
+    border: 2px solid #000;
+    border-radius: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+}
+
+.roll:active {
+    transform: scale(1.05);
+}
+
+.roll .human {
+    position: relative;
+    width: 110px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.roll .human .man {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transition: opacity 0.08s linear;
+}
+
+.roll .human .man1 { opacity: 1; }
+.roll:hover .man1 { animation: frame-1 0.6s steps(1) infinite; }
+.roll:hover .man2 { animation: frame-2 0.6s steps(1) infinite; }
+.roll:hover .man3 { animation: frame-3 0.6s steps(1) infinite; }
+
+.roll .star {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.roll:hover .star {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.roll .star:hover {
+    animation: roll-star-spin 1.5s ease-in-out infinite;
+}
+
+.roll:active .star {
+    opacity: 0;
+    transform: scale(0);
+    animation: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.roll .brush {
+    position: absolute;
+    bottom: 30px;
+    left: -50px;
+    width: 44px;
+    height: auto;
+    opacity: 0;
+    transform: rotate(-30deg);
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.roll:active .brush {
+    opacity: 1;
+    animation: roll-brush-curve 2s ease-in-out forwards;
+}
+
+.roll .caption {
+    position: absolute;
+    width: 100%;
+    left: -10%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    color: #333;
+    z-index: 20;
+}
+
+.roll .caption-1 {
+    top: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.roll:hover .caption-1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.roll:active .caption-1 {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.roll .caption-2 {
+    top: 20px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.roll:active .caption-2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+
+@keyframes frame-1 {
+    0%,  33%  { opacity: 1; }
+    34%, 100% { opacity: 0; }
+}
+@keyframes frame-2 {
+    0%,  33%  { opacity: 0; }
+    34%, 66%  { opacity: 1; }
+    67%, 100% { opacity: 0; }
+}
+@keyframes frame-3 {
+    0%,  66%  { opacity: 0; }
+    67%, 100% { opacity: 1; }
+}
+
+@keyframes roll-star-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes roll-brush-curve {
+    0%   { transform: translate(0, 0) rotate(-30deg); opacity: 1; }
+    15%  { transform: translate(35px, -90px) rotate(20deg); opacity: 1; }
+    30%  { transform: translate(70px, -60px) rotate(-15deg); opacity: 1; }
+    45%  { transform: translate(105px, -90px) rotate(15deg); opacity: 1; }
+    60%  { transform: translate(140px, -60px) rotate(-10deg); opacity: 1; }
+    75%  { transform: translate(175px, -90px) rotate(20deg); opacity: 1; }
+    90%  { transform: translate(210px, -60px) rotate(-5deg); opacity: 1; }
+    100% { transform: translate(245px, -80px) rotate(30deg); opacity: 1; }
+}
